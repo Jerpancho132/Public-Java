@@ -77,6 +77,7 @@ public class Account {
 
 
 	public void makeDeposit() {
+		int a = 0;
 		int o = 0;
 		Scanner l = new Scanner(System.in);
 		System.out.println("Select Account:");
@@ -86,16 +87,17 @@ public class Account {
 		if(o == 1)
 		{
 			System.out.print("How much do you want to deposit: ");
-			checkings = l.nextInt();
+			a = l.nextInt();
+			checkings = checkings + a;
 		}
 		else if (o == 2)
 		{
 			System.out.print("How much do you want to deposit: ");
-			savings = l.nextInt();
+			a = l.nextInt();
+			savings = savings + a;
 		}
 		//l.close();
 		System.out.println("Thank You!");
-		
 		
 	}
 	public void makeWithdrawal() {
