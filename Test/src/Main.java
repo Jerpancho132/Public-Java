@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -6,16 +6,16 @@ public class Main {
 		// TODO Auto-generated method stub
 		Account a = new Account();
 		Scanner k = new Scanner(System.in);
-		int opt;
+		
+		int opt = 0;
 		while(true)
 		{
-			
-		
 			System.out.println("Select option");
 			System.out.println("1. Display checkings");
 			System.out.println("2. Display savings");
 			System.out.println("3. Make a deposit");
 			System.out.println("4. Make a withdrawal");
+			System.out.println("5. Transfer funds");
 			System.out.println("6. Done");
 			
 			opt = k.nextInt();
@@ -32,6 +32,9 @@ public class Main {
 			}
 			else if(opt == 4) {
 				a.makeWithdrawal();
+			}
+			else if(opt == 5) {
+				a.makeTransfer();
 			}
 			else if(opt == 6)
 			{

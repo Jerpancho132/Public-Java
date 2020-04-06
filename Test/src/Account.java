@@ -4,8 +4,8 @@ public class Account {
 	String user;
 	String pass;
 	String strength = "Weak";
-	int checkings = 0;
-	int savings = 0;
+	int checkings = 500;
+	int savings = 500;
 	
 	
 	//for testing 
@@ -71,7 +71,7 @@ public class Account {
 			chkPass(pass);
 
 		}
-		s.close();
+	//	s.close();
 	}
 	
 
@@ -93,7 +93,7 @@ public class Account {
 			System.out.print("How much do you want to deposit: ");
 			savings = l.nextInt();
 		}
-		l.close();
+		//l.close();
 		System.out.println("Thank You!");
 		
 		
@@ -130,7 +130,45 @@ public class Account {
 				checkings = checkings - w;
 			}
 		}
-		p.close();
+	//	p.close();
 		System.out.println("Thank You!");
 	}
+	public void makeTransfer() {
+		int a = 0;
+		int o = 0;
+		Scanner t = new Scanner(System.in);
+		System.out.println("Select Transfer:");
+		System.out.println("1. Checkings -> Savings");
+		System.out.println("2. Savings -> Checkings");
+		o = t.nextInt();
+		if(o == 1)
+		{
+			System.out.print("How much do you want to transfer: ");
+			a = t.nextInt();
+			if(checkings < a) {
+				System.out.println("Amount is too large.");
+			}
+			else {
+				checkings = checkings - a;
+				savings = savings + a;
+			}
+		}
+		else if (o == 2)
+		{
+			System.out.print("How much do you want to transfer: ");
+			a = t.nextInt();
+			if(savings < a) {
+				System.out.println("Amount is too large.");
+			}
+			else
+			{
+			savings = savings - a;
+			checkings = checkings + a;
+			}
+
+		}
+		System.out.println("Thank You!");
+	}
+
 }
+
